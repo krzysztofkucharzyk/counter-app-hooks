@@ -1,38 +1,96 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+  background-color: #f0f7f8;
+  color:#425a65;
+}
+
+h1 {
+  font-size: 6em;
+}
+
+.counter-panel {
+  display: flex;
+  gap: 1rem;
+}
+
+.counter-panel button {
+  border: none;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px darkgrey;
+  font-weight: bold;
+  font-size: 2rem;
+  color: inherit;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.counter-panel button:hover {
+  background-color: #cfd8dc;
+  color:#fff;
+}
+
+.minus {
+  color: #ff1744;
+}
+
+.plus {
+  color: #2abf77;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100vh;
+  background-color: #f0f7f8;
+  color:#425a65;
+}
+
+.step h1{
+  font-size: 6em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.step input[type='number'] {
+  padding: 10px;
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.step input[type='number'] {
+  -moz-appearance:textfield;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.step input::-webkit-outer-spin-button,
+.step input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.step button {
+  border: none;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px darkgrey;
+  font-weight: bold;
+  font-size: 1rem;
+  color: inherit;
+  margin-left: 20px;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
 }
