@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ClockFunc from "./ClockFunc";
 
@@ -56,8 +56,7 @@ function App() {
   let clockElem = '';
 
   if (showClock === true) {
-    // clockElem = <Clock toggleClock={this.toggle} />;
-    clockElem = <ClockFunc toggleClock={toggleClock} />;
+    clockElem = <ClockFunc toggleClockM={toggleClock} />;
 } else {
     clockElem = <span className="show" onClick={toggleClock}>show</span>;
 }

@@ -18,7 +18,7 @@ const ClockFunc = (props) => {
 
     return (
         <div className="clock">
-            <h4>Time: {date.toLocaleTimeString()} <span onClick={props.toggleClock}>X</span></h4>
+            <h4>Time: {date.toLocaleTimeString()} <span onClick={props.toggleClockM}>X</span></h4>
         </div>
     )
 
