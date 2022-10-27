@@ -55,7 +55,7 @@ function App() {
 
   let clockElem = '';
 
-  if (showClock) {
+  if (showClock === true) {
     // clockElem = <Clock toggleClock={this.toggle} />;
     clockElem = <ClockFunc toggleClock={toggleClock} />;
 } else {
