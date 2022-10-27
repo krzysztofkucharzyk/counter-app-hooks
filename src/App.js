@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
+import ClockFunc from "./ClockFunc";
 
 function App() {
 
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(0);
   const [sum, setSum] = useState(0);
+  const [showClock, setShowClock] = useState(true);
+
+  // console.log(step);
+  // console.log(sum);
 
   const inc = () => {
     setCount(prevCount => prevCount + 1);
@@ -23,6 +28,13 @@ function App() {
     setSum(prevCount => prevCount += +step);
   }
 
+  const init = () => {
+    setSum(0);
+  }
+
+  // console.log(step);
+  // console.log(sum);
+
   // const changeValue = (action) => {
   //   setSum((prevCount) => {
   //     if(action === 'add') {
@@ -32,6 +44,26 @@ function App() {
   //     }
   //   }
   // )}
+
+  const toggleClock = () => {
+    setShowClock((prevState) => {
+      return({
+        showClock: !prevState.showClock
+      });
+    })
+  } 
+
+  let clockElem = '';
+
+  if (showClock) {
+    // clockElem = <Clock toggleClock={this.toggle} />;
+    clockElem = <ClockFunc toggleClock={toggleClock} />;
+} else {
+    clockElem = <span className="show" onClick={toggleClock}>show</span>;
+}
+  
+  
+
 
   return (
     <div className="App">
@@ -45,8 +77,10 @@ function App() {
           {/* STEP: <input type="number" value={step} onChange={event => setStep(event.target.value)}/> */}
           STEP: <input type="number" value={step} onChange={stepChange}/>
           <button onClick={add}>Add {step}</button>
+          <button onClick={init}>Initial value</button>
           {/* <button onClick={() => changeValue('add')}>Add {step}</button>
           <button onClick={() => changeValue('init')}>Initial value</button> */}
+          {clockElem}
         </div>
     </div>
   );
